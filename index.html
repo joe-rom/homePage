@@ -16,6 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.css" rel="stylesheet">
+    <link href="css/video.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -60,6 +61,10 @@
 
     <!-- Header -->
     <header id="top" class="header">
+        <div class="videoCover"></div>
+        <div class="videoContainer">
+            <div id="video"></div>
+        </div>
         <div class="text-vertical-center">
           <div class="container-fluid welcome-container">
             <h1 id="welcome"></h1>
@@ -78,10 +83,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Lorem ipsum dolor sit amet</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dicimus aliquem hilare vivere; Quare conare, quaeso. Tibi hoc incredibile, quod beatissimum. Ratio enim nostra consentit, pugnat oratio. Duo Reges: constructio interrete. Venit ad extremum; Qui ita affectus, beatum esse numquam probabis;
-
-</p>
+                    <h2>Self taught</h2>
+                    <p class="lead">
+                    I started learning HTML/CSS/JS over a year ago and I'<ve></ve></p>
                 </div>
             </div>
             <!-- /.row -->
@@ -107,7 +111,7 @@
                                 <h4>
                                     <strong>Code</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p>Over a year of experience in HTML/CSS/JS - and all the libaries</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -119,7 +123,7 @@
                                 <h4>
                                     <strong>Responsive</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p>My websites work on your phone - AND your computer.</p>
                               </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -131,7 +135,7 @@
                                 <h4>
                                     <strong>Passion</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p>I love coding so much, I taught myself</p>
                               </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -141,9 +145,9 @@
                                 <i class="fa fa-shield fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Meeeeh</strong>
+                                    <strong>Perserverance</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p>JavaScript in 2017 is hard.</p>
                             </div>
                         </div>
                     </div>
@@ -174,18 +178,20 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio1.jpg">
+                                <a target="_blank" href="http://github.com/joe-rom">
+                                    <img class="img-portfolio img-responsive" src="img/github.svg">
+                                    <h4>Github</h4>
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio3.jpg">
+                                <a target="_blank" href="http://freecodecamp.com/joe-rom">
+                                    <img class="img-portfolio img-responsive" src="img/fcc.svg">
+                                    <h4>Free Code Camp</h4>
                                 </a>
                             </div>
-                        </div>
+                        </div>                        
                     </div>
                     <!-- /.row (nested) -->
                 </div>
@@ -236,7 +242,7 @@
                             <a href="https://www.facebook.com/joe.grenest"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
                         </li>
                         <li>
-                            <a href="https://www.codecademy.com/Joe.Nst"><img src="img/asd.jpg" height="80" width="80"></a>
+                            <a href="https://www.codecademy.com/Joe.Rom"><img src="img/asd.jpg" height="80" width="80"></a>
                         </li>
                         <li>
                             <a href="https://twitter.com/joe_nst?edit=true"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
@@ -332,29 +338,29 @@
 
     /// - - - - - - W E L C O M E - - - - - -
 
-    var array = ["Welcome","Bienvenue","Willkommen","Καλώς ορίσατε","Benvenuto","Welkom","Velkommen","Welcome","Bienvenue","Willkommen","Καλώς ορίσατε","Benvenuto","Welkom","Velkommen","Welcome","Bienvenue","Willkommen","Καλώς ορίσατε","Benvenuto","Welkom","Velkommen","Welcome","Bienvenue"];
-
-
+    var array = ["Welcome","Bienvenue","Willkommen", "환영합니다", "Καλώς ορίσατε","Benvenuto","Welkom","Velkommen","Welcome","Bienvenue","Willkommen","Καλώς ορίσατε","Benvenuto","Welkom","Velkommen","Welcome","Bienvenue","Willkommen","Καλώς ορίσατε","Benvenuto","Welkom","Velkommen","Welcome","Bienvenue"];
 
     $(document).ready(function(){
-
-      function doSetTimeOut(i){
-        setTimeout(function(){
-
-        document.getElementById("welcome").innerHTML = array[i];
-        $("#welcome").fadeIn(1000);
-        $("#welcome").fadeOut(4000);
-        },i * 5000);
-      }
-
-      for ( var i = 0; i < array.length; i++){
-        doSetTimeOut(i);
-      }
+        document.getElementById("welcome").innerHTML = array[0];
+        function setNameInterval(i){
+            setInterval(function(){
+                $("#welcome").fadeOut(1000, 'swing', function(){
+                    document.getElementById("welcome").innerHTML = array[i];
+                    $("#welcome").fadeIn(1000);
+                });
+                i++;
+                if(i === array.length) i = 0
+            }, 5000)
+        }
+        setNameInterval(0);
     });
 
 //// - - - - - - - - E N D   W E L C O M E - - - - -
     </script>
-
+    <script src="./js/main.js"></script> 
 </body>
 
 </html>
+
+
+
