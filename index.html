@@ -63,7 +63,8 @@
     <header id="top" class="header">
         <div class="videoCover"></div>
         <div class="videoContainer">
-            <div id="video"></div>
+            <div id="video" class="video"></div>
+            <div id="videoBackup" class="video"></div>
         </div>
         <div class="text-vertical-center">
           <div class="container-fluid welcome-container">
@@ -83,9 +84,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Self taught</h2>
+                    <h2>Future JavaScript Wizzard</h2>
                     <p class="lead">
-                    I started learning HTML/CSS/JS over a year ago and I'<ve></ve></p>
+                    I started learning HTML/CSS/JS over a year ago and I've been passionate about it ever since.</p>
                 </div>
             </div>
             <!-- /.row -->
@@ -111,7 +112,7 @@
                                 <h4>
                                     <strong>Code</strong>
                                 </h4>
-                                <p>Over a year of experience in HTML/CSS/JS - and all the libaries</p>
+                                <p>Over a year of experience in HTML/CSS/JS</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -239,13 +240,13 @@
                     <br>
                     <ul class="list-inline">
                         <li>
-                            <a href="https://www.facebook.com/joe.grenest"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                            <a target="_blank" href="https://www.facebook.com/joe.grenest"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
                         </li>
                         <li>
-                            <a href="https://www.codecademy.com/Joe.Rom"><img src="img/asd.jpg" height="80" width="80"></a>
+                            <a target="_blank" href="https://www.codecademy.com/Joe.Rom"><img src="img/asd.jpg" height="80" width="80"></a>
                         </li>
                         <li>
-                            <a href="https://twitter.com/joe_nst?edit=true"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                            <a target="_blank" href="https://twitter.com/joe_nst?edit=true"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
                         </li>
                     </ul>
                     <hr class="small">
@@ -267,11 +268,11 @@
     <script>
 
 
+
     var array = ["Welcome","Bienvenue","Willkommen", "환영합니다", "Καλώς ορίσατε","Benvenuto","Welkom","Velkommen","Welcome","Bienvenue","Willkommen","Καλώς ορίσατε","Benvenuto","Welkom","Velkommen","Welcome","Bienvenue","Willkommen","Καλώς ορίσατε","Benvenuto","Welkom","Velkommen","Welcome","Bienvenue"];
     $(document).ready(function(){
       initWelcome("#welcome", array, 5000);
     });
-
 
     // Closes the sidebar menu
     $("#menu-close").click(function(e) {

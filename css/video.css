@@ -1,4 +1,4 @@
-#video {
+.video {
   position: absolute;
   left: 0;
   top: 0;
@@ -6,6 +6,14 @@
   height: 150%;
   width: 150%;
   transform: translate(-15%, -15%);
+  z-index: 2;
+}
+
+#videoBackup {
+  z-index: 10;
+  display:block;
+  background: url('../img/bg.png');
+  background-size: cover;
 }
 
 .videoCover {

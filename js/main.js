@@ -16,6 +16,7 @@
           switch(data.data){
             case 1:
               $('#video').fadeIn(2000);
+              $('#videoBackup').fadeOut(2000);
               break;
             case 0:
               data.target.seekTo(15)

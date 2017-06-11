@@ -217,13 +217,17 @@ hr.small {
     padding: 50px 0;
 }
 
+
 .portfolio-item {
     margin-bottom: 30px;
+}
+.portfolio-item h4 {
+    margin-top: 40px;
 }
 
 .img-portfolio {
     margin: 0 auto;
-    height: 247px;
+    height: 210px;
     width: auto;
 }
 
